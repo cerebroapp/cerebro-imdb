@@ -1,6 +1,6 @@
 {
   "name": "cerebro-imdb",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Cerebro plugin to find films on imdb.com",
   "license": "MIT",
   "repository": "KELiON/cerebro-imdb",

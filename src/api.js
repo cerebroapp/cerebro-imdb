@@ -26,5 +26,5 @@ module.exports.fetchFilms = memoize((q) => (
   fetch(`${BASE_URL}/?r=json&plot=short&s=${q}`)
     .then(response => response.json())
     .then(json => json.Search)
-    .then(json => json.map(removeEmptyKeys))
+    .then(json => (json || []).map(removeEmptyKeys))
 ))
