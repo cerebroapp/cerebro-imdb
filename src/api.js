@@ -8,7 +8,7 @@ const removeEmptyKeys = (hash) => (
   Object
     .keys(hash)
     .reduce((acc, key) => {
-      if (notNA(hash[key])) {
+      if (notEmpty(hash[key])) {
         return Object.assign(acc, {[key]: hash[key]})
       }
       return acc;
