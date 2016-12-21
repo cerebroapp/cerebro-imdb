@@ -35,6 +35,10 @@ module.exports = {
           modules: true
         }
       }]
-    }]
+    }, {
+      test: /\.png$/,
+      loader: 'url-loader'
+    }
+    ]
   }
 };
