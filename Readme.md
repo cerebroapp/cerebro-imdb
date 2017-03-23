@@ -1,5 +1,7 @@
 # cerebro-imdb
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/KELiON/cerebro-imdb.svg)](https://greenkeeper.io/)
+
 > [Cerebro](http://www.cerebroapp.com) plugin to find films on imdb.com
 
 ![](screenshot.png)
