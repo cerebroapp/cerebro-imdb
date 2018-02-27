@@ -1,18 +1,20 @@
-'use strict';
-const React = require('react');
-const Preview = require('./Preview');
-const { fetchFilms } = require('./api');
-const icon = require('./icon.png');
-const keyword = 'imdb';
+import React from 'react'
+import Preview from './Preview'
+import { fetchFilms } from './api'
+import imdbIcon from './icon.png'
 
-const fn = ({term, display, actions}) => {
-  let match = term.match(/(?:films?|imdb)\s+(.+)/);
-  match = match || term.match(/(.+)\s+(?:films?|imdb)/);
+export const icon = imdbIcon
+export const keyword = 'imdb'
+export const name = 'Search on imdb.com...'
+
+export const fn = ({term, display, actions}) => {
+  let match = term.match(/(?:films?|imdb)\s+(.+)/)
+  match = match || term.match(/(.+)\s+(?:films?|imdb)/)
   if (match) {
-    const q = match[1];
+    const q = match[1]
     fetchFilms(q).then(items => {
       if (!items) {
-        return;
+        return
       }
       const results = items.map(item => ({
         icon,
@@ -25,9 +27,4 @@ const fn = ({term, display, actions}) => {
       display(results)
     })
   }
-};
-
-module.exports = {
-  name: 'Search on imdb.com...',
-  fn, icon, keyword,
 }
